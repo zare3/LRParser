@@ -31,7 +31,6 @@ extern int yylineno;
 %token CLOSEB
 %token DELIM
 %token COMMA
-%token EPSILON
 %token NUM
 %token ASSIGN
 %token WHILE
@@ -72,7 +71,7 @@ compound_stmt:
 	 OPENB statement_list CLOSEB
    ;
 statement_list:
-	  statement_list statement | EPSILON
+	  statement_list statement | 
     ;
 statement:
     assignment_stmt | compound_stmt | selection_stmt | iteration_stmt

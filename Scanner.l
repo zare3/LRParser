@@ -1,7 +1,7 @@
 %top{
 
 	extern int yyparse();
-
+	#include <cstdarg>
 	#include <vector>
 	#include <iostream>
 	#include "Parser.h"
