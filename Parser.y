@@ -1,5 +1,4 @@
-/* Mini Calculator */
-/* calc.y */
+%define parse.error verbose
 
 %{
 #include <iostream>
@@ -44,10 +43,10 @@ extern int yylineno;
 %%
 
 program:		/* empty */
-		type_specifier ID OPENP params CLOSEP OPENB declaration_list compound_statement CLOSEB {cout"Successful!";}
+		type_specifier ID OPENP params CLOSEP OPENB declaration_list compound_stmt CLOSEB {cout<<"Successful!";}
 		;
 declaration_list:
-    declaration | declaration
+    declaration_list declaration | declaration
     ;
 
 declaration:
@@ -85,7 +84,7 @@ iteration_stmt:
     WHILE OPENP expression CLOSEP statement
     ;
 assignment_stmt:
-    var ASSIGNOP expression;
+    var ASSIGN expression;
 
 var:
 		ID | ID OPENSB expression CLOSESB

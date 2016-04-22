@@ -1,4 +1,7 @@
 %top{
+
+	extern int yyparse();
+
 	#include <vector>
 	#include <iostream>
 	#include "Parser.h"
@@ -126,8 +129,17 @@ CLOSEP		")"
 
 %%
 
+void yyerror (const char* s, ...){
+	
+	va_list ap;
+	va_start(ap, s);
+	fprintf (stderr, "Line %d: ", yylineno);
+	vfprintf (stderr, s , ap);
+	fprintf(stderr,"\n");
+}
 
-int main(int argc, cosnt* argv[])
+
+int main(int argc, const char* argv[])
 {
 	if (argc<2){
 		cout << "No input file found"<<endl;
