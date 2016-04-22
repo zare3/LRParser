@@ -1,0 +1,12 @@
+int main(void i, int arr[], float a[]){
+	int x;
+	float xa[10];	/*couldn't figure out why it is not working here Maybe error reporting will help?*/
+	x = 0;
+	arr[10] = arr[1] + x + 10 * arr[20] - arr[x * 10 / x] / 10 + x;
+	if(arr[10] <= 10 >= x < a[1 > 2]){
+		while(x + 10) x = x - 10;
+		if(10 == 10) x = x;
+		else meh = meh;
+	}
+	if(x) {}
+}
